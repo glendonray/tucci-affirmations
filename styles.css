@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+html {
+    font-size: 16px;
+    color: #111;
+}
+
+h1, h2, h3, .playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+    padding: 1.5rem 3rem;
+    box-shadow: 3px 3px 12px rgb(213 0 143 / 40%);
+}
+
+#tucci {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.btn-wrapper {
+    position: fixed;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+}
+
+#affirmation-copy {
+    height: 40vh;
+}
+#affirmation-image {
+    height: 60vh;
+}
+
+@media (min-width: 769px) {
+    .btn {
+        font-size: 2rem;
+        padding: 1.5rem 3rem;
+    }
+}
+:root {
+    --base:              #ff5ca3;
+    --bg-blend:          multiply;
+    --blur:              0px;
+    --fg-blend:          lighten;
+    --foreground:        #4a0264;
+    --opacity:           1;
+    --spacing:           1%;
+  }
+#affirmation-image {
+    background-color:    var(--base);
+    display:             flex;
+    flex:                1 1 100%;
+    position:            relative;
+    overflow: hidden;
+  }
+  
+  #affirmation-image img {
+    filter:              grayscale(100%) contrast(1) blur(var(--blur));
+    flex:                1 0 100%;
+    mix-blend-mode:      var(--bg-blend);
+    opacity:             var(--opacity);
+    position:            relative;
+  }
+  
+  #affirmation-image::before {
+    background-color:    var(--foreground);
+    bottom:              0;
+    content:             '';
+    height:              100%;
+    left:                0;
+    mix-blend-mode:      var(--fg-blend);
+    position:            absolute;
+    right:               0;
+    top:                 0;
+    width:               100%;
+    z-index:             1;
+  }
+  
